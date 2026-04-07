@@ -435,25 +435,23 @@
             color: #475569;
             background: #f1f5f9;
         }
-
-        /* 表格样式 - 移动端水平滚动友好 */
+/* 移动端订单表格优化：横向滚动更友好 + 卡片化增强 */
         .table-wrapper {
             overflow-x: auto;
             border-radius: 16px;
+            -webkit-overflow-scrolling: touch;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 800px;
+            min-width: 850px;
         }
-
+        /* 移动端稍微减少最小宽度，确保关键字段可见但不会过挤，同时允许滚动 */
         @media (max-width: 640px) {
             table {
-                min-width: 700px;
+                min-width: 780px;
             }
         }
-
         th {
             text-align: left;
             padding: 12px 12px 12px 0;
@@ -462,14 +460,12 @@
             border-bottom: 1px solid #e9edf2;
             font-size: 0.8rem;
         }
-
         td {
             padding: 14px 12px 14px 0;
             border-bottom: 1px solid #f0f2f5;
             font-size: 0.85rem;
             color: #1f2a44;
         }
-
         .status-badge {
             background: #dcfce7;
             color: #15803d;
@@ -480,38 +476,8 @@
             display: inline-block;
             white-space: nowrap;
         }
-
-        .status-warning {
-            background: #fff3e3;
-            color: #b45309;
-        }
-
-        .status-overdue {
-            background: #fee2e2;
-            color: #b91c1c;
-        }
-
-        .btn-icon {
-            color: #3b6e9e;
-            cursor: pointer;
-            margin-right: 8px;
-        }
-
-        /* 客情维护/销售线索简易卡片 */
-        .two-columns {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .two-columns {
-                grid-template-columns: 1fr 1fr;
-                gap: 24px;
-            }
-        }
-
+        .status-warning { background: #fff3e3; color: #b45309; }
+        .status-overdue { background: #fee2e2; color: #b91c1c; }
         .clue-item {
             background: #fefce8;
             border-left: 4px solid #eab308;
@@ -520,7 +486,15 @@
             margin-bottom: 10px;
             font-size: 0.85rem;
         }
-
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            .two-columns { grid-template-columns: 1fr 1fr; gap: 24px; }
+        }
         .copyright {
             text-align: center;
             font-size: 0.7rem;
@@ -529,41 +503,14 @@
             border-top: 1px solid #e2e8f0;
             margin-top: 12px;
         }
-
         .no-result {
             text-align: center;
             padding: 48px 20px;
             color: #94a3b8;
         }
+        .no-result i { font-size: 3rem; margin-bottom: 12px; opacity: 0.5; }
 
-        .no-result i {
-            font-size: 3rem;
-            margin-bottom: 12px;
-            opacity: 0.5;
-        }
-
-        /* 移动端微调 */
-        @media (max-width: 480px) {
-            .user-area i:first-child {
-                display: none;
-            }
-
-            .user-area {
-                gap: 10px;
-            }
-
-            .avatar {
-                width: 32px;
-                height: 32px;
-                font-size: 0.8rem;
-            }
-
-            .badge-action {
-                font-size: 0.65rem;
-                padding: 3px 10px;
-            }
-        }
-
+        /* ========= 右侧垂直Logo：移动端放大一倍 ========= */
         .vertical-company {
             position: fixed;
             right: 16px;
@@ -574,9 +521,7 @@
             font-family: system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif;
             font-weight: 900;
             font-size: 0.7rem;
-            /* 基础默认（适用于小屏平板） */
             letter-spacing: 6px;
-            color: #d9512c;
             background: linear-gradient(135deg, #e55a32, #b83a1a);
             background-clip: text;
             -webkit-background-clip: text;
@@ -586,41 +531,64 @@
             z-index: 99;
             pointer-events: none;
             opacity: 0.85;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08));
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
         }
 
-        /* 移动端（手机） - 最小 */
+        /* 移动端（手机）Logo放大一倍：原0.55rem → 放大到1.1rem (接近翻倍) */
         @media (max-width: 640px) {
             .vertical-company {
-                font-size: 0.55rem;
-                /* 手机端更小 */
-                letter-spacing: 3px;
-                right: 4px;
+                font-size: 1.1rem;    /* 相对手机基础0.55rem放大一倍多，视觉显著增强 */
+                letter-spacing: 5px;
+                right: 6px;
+                opacity: 0.9;
+            }
+            body {
+                padding-right: 1.2rem;
+            }
+        }
+
+        /* 平板电脑适当增大比例（比手机略小但比原0.7大） */
+        @media (min-width: 641px) and (max-width: 991px) {
+            .vertical-company {
+                font-size: 0.95rem;    /* 比原版0.7稍大，增强可见 */
+                letter-spacing: 7px;
+                right: 12px;
+            }
+        }
+
+        /* 桌面端保持适度大小，但相比原设计稍微精致些 */
+        @media (min-width: 992px) {
+            .vertical-company {
+                font-size: 0.9rem;
+                letter-spacing: 6px;
+                right: 20px;
                 opacity: 0.7;
             }
-
-            body {
-                padding-right: 1.5rem;
-            }
         }
-
-        /* 电脑端（桌面） - 比原版小，但比手机大 */
-        @media (min-width: 1024px) {
-            .vertical-company {
-                font-size: 1.0rem;
-                /* 原1.9rem → 改成1.0rem，电脑端也变小了 */
-                letter-spacing: 8px;
-                right: 24px;
-                opacity: 0.8;
-            }
-        }
-
-        /* 超大屏幕可选稍微大一点但仍比原版小 */
         @media (min-width: 1440px) {
             .vertical-company {
-                font-size: 1.1rem;
-                letter-spacing: 10px;
+                font-size: 1rem;
+                letter-spacing: 8px;
             }
+        }
+
+        /* 移动端表格内字体微调提升触控 */
+        @media (max-width: 640px) {
+            td, th {
+                font-size: 0.8rem;
+            }
+            td .status-badge {
+                font-size: 0.65rem;
+                padding: 3px 8px;
+            }
+            .badge-action {
+                font-size: 0.65rem;
+            }
+        }
+        .btn-icon {
+            color: #3b6e9e;
+            cursor: pointer;
+            margin-right: 8px;
         }
     </style>
 </head>
@@ -1918,7 +1886,7 @@
                 return renderFullOrdersView();
             },
             bills: () => `<div class="data-card"><div class="card-header"><h3>租赁账单概览</h3><span class="badge-action">本月应收 ¥94,200</span></div><div class="table-wrapper"><table><thead><tr><th>客户</th><th>账单周期</th><th>应收金额</th><th>已付</th><th>状态</th></tr></thead><tbody><tr><td>杭州智云科技</td><td>2024-09</td><td>¥12,300</td><td>¥12,300</td><td><span class="status-badge">已结清</span></td></tr><tr><td>苏州工业智能</td><td>2024-09</td><td>¥8,450</td><td>¥0</td><td><span class="status-warning">已结清</span></td></tr><tr><td>北京联合设计</td><td>2024-09</td><td>¥3,200</td><td>¥3,200</td><td><span class="status-badge">已结清</span></td></tr></tbody></table></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
-            customers: () => `<div class="data-card"><div class="card-header"><h3>客户管理</h3><span class="badge-action"><i class="fas fa-user-plus"></i> 新增客户</span></div><div class="table-wrapper"><table><thead><tr><th>客户名称</th><th>联系人</th><th>电话</th><th>租赁次数</th><th>信用评级</th></tr></thead><tbody><tr><td>陈星宇</td><td>张经理</td><td>138****1102</td><td>12</td><td>AA+</td></tr><tr><td>刘向东</td><td>李思源</td><td>159****4501</td><td>7</td><td>A</td></tr><tr><td>周文昊</td><td>王芳</td><td>188****3320</td><td>7</td><td>B+</td></tr></tbody></table></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
+            customers: () => `<div class="data-card"><div class="card-header"><h3>客户管理</h3><span class="badge-action"><i class="fas fa-user-plus"></i> 新增客户</span></div><div class="table-wrapper"><table><thead><tr><th>客户名称</th><th>联系人</th><th>电话</th><th>租赁次数</th><th>信用评级</th></tr></thead><tbody><tr><td>陈星宇</td><td>张经理</td><td>138****1102</td><td>12</td><td>AA+</td></tr><tr><td>刘向东</td><td>李思源</td><td>159****4501</td><td>7</td><td>A</td></tr><tr><td>周文昊</td><td>王芳</td><td>188****3320</td><td></td><td>B+</td></tr></tbody></table></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
             maintain: () => `<div class="two-columns"><div class="data-card"><div class="card-header"><h3>近期待跟进客户</h3></div><div class="clue-item"><i class="fas fa-calendar-week"></i> 华锐精密 | 上次拜访: 20天前 → 建议回访</div><div class="clue-item"><i class="fas fa-gift"></i> 恒通集团 | 租期即将结束，续租洽谈</div><div class="clue-item"><i class="fas fa-comment-dots"></i> 王智博 | 设备使用反馈收集</div></div><div class="data-card"><div class="card-header"><h3>客情维护记录</h3></div><div><i class="fas fa-check-circle" style="color:#10b981;"></i> 9月20日 为海创企业提供技术培训</div><div><i class="fas fa-check-circle" style="color:#10b981;"></i> 9月18日 赠送中秋定制礼盒</div><div><i class="fas fa-clock"></i> 计划明日拜访“联强建设”</div></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
             leads: () => `<div class="data-card"><div class="card-header"><h3>销售线索池</h3><span class="badge-action">新增线索</span></div><div class="table-wrapper"><table><thead><tr><th>公司名称</th><th>来源</th><th>意向设备</th><th>跟进人</th><th>状态</th></tr></thead><tbody><tr><td>卓远新能源</td><td>官网咨询</td><td>数据存储阵列</td><td>李潇</td><td>初步沟通</td></tr><tr><td>鼎峰制造</td><td>转介绍</td><td>会议平板+笔记本</td><td>王哲</td><td>方案报价</td></tr><tr><td>极客未来</td><td>展会</td><td>VR/AR租赁套件</td><td>张敏</td><td>意向强烈</td></tr></tbody></table></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
             ungrouped: () => `<div class="data-card"><div class="card-header"><h3>未分组联系人/客户</h3></div><p style="padding: 12px 0;">共有 24 位客户尚未分配至任何分组，可批量管理分组。</p><div class="badge-action" style="display:inline-block;">一键分配</div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
