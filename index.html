@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>联德租赁 | 智能设备租赁管理系统</title>
+    <title>新德租赁 | 智能设备租赁管理系统</title>
     <!-- 引入字体与图标库 -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
@@ -602,7 +602,7 @@
         <!-- 侧边栏 -->
         <div class="sidebar" id="sidebar">
             <div class="brand">
-                <h1>联德租赁</h1>
+                <h1>新德租赁</h1>
                 <p>Liande Lease · 智慧租凭</p>
             </div>
             <div class="nav-menu">
@@ -665,7 +665,7 @@
               
             </div>
             <div class="sidebar-footer">
-                <i class="far fa-copyright"></i> 北京联德租赁 All Rights Reserved<br>
+                <i class="far fa-copyright"></i> 新德租赁 All Rights Reserved<br>
 
             </div>
         </div>
@@ -1754,7 +1754,7 @@
                     ${renderOrdersTable(filtered)}
                 </div>
             </div>
-            <div class="copyright">Copyright 联德租赁 All Rights Reserved </div>
+            <div class="copyright">Copyright 新德租赁 All Rights Reserved </div>
         `;
             return html;
         }
@@ -1822,7 +1822,7 @@
             <div class="stats-grid">
                 <div class="stat-card"><div class="stat-title">在租设备</div><div class="stat-number">644</div></div>
                 <div class="stat-card"><div class="stat-title">本月订单</div><div class="stat-number">48</div></div>
-                <div class="stat-card"><div class="stat-title">应收租金</div><div class="stat-number">¥5862.5k</div></div>
+                <div class="stat-card"><div class="stat-title">应收租金</div><div class="stat-number">¥5862549</div></div>
                 <div class="stat-card"><div class="stat-title">活跃客户</div><div class="stat-number">376</div></div>
             </div>
             <div class="data-card">
@@ -1854,7 +1854,7 @@
                 <div class="clue-item"><i class="fas fa-phone-alt"></i> 联系“启航设备”续签合同，今日到期</div>
                 <div class="clue-item"><i class="fas fa-file-signature"></i> 3笔租赁账单逾期，请及时催收</div>
             </div>
-            <div class="copyright">Copyright 联德租赁 All Rights Reserved</div>
+            <div class="copyright">Copyright 新德租赁 All Rights Reserved</div>
         `,
             products: () => `
             <div class="data-card">
@@ -1878,25 +1878,25 @@
                     </tbody></table>
                 </div>
             </div>
-            <div class="copyright">Copyright 联德租赁 All Rights Reserved</div>
+            <div class="copyright">Copyright 新德租赁 All Rights Reserved</div>
         `,
             orders: () => {
                 // 重置过滤器
                 currentFilter = '';
                 return renderFullOrdersView();
             },
-            bills: () => `<div class="data-card"><div class="card-header"><h3>租赁账单概览</h3><span class="badge-action">本月应收 ¥94,200</span></div><div class="table-wrapper"><table><thead><tr><th>客户</th><th>账单周期</th><th>应收金额</th><th>已付</th><th>状态</th></tr></thead><tbody><tr><td>杭州智云科技</td><td>2024-09</td><td>¥12,300</td><td>¥12,300</td><td><span class="status-badge">已结清</span></td></tr><tr><td>苏州工业智能</td><td>2024-09</td><td>¥8,450</td><td>¥0</td><td><span class="status-warning">已结清</span></td></tr><tr><td>北京联合设计</td><td>2024-09</td><td>¥3,200</td><td>¥3,200</td><td><span class="status-badge">已结清</span></td></tr></tbody></table></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
-            customers: () => `<div class="data-card"><div class="card-header"><h3>客户管理</h3><span class="badge-action"><i class="fas fa-user-plus"></i> 新增客户</span></div><div class="table-wrapper"><table><thead><tr><th>客户名称</th><th>联系人</th><th>电话</th><th>租赁次数</th><th>信用评级</th></tr></thead><tbody><tr><td>陈星宇</td><td>张经理</td><td>138****1102</td><td>12</td><td>AA+</td></tr><tr><td>刘向东</td><td>李思源</td><td>159****4501</td><td>7</td><td>A</td></tr><tr><td>周文昊</td><td>王芳</td><td>188****3320</td><td></td><td>B+</td></tr></tbody></table></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
-            maintain: () => `<div class="two-columns"><div class="data-card"><div class="card-header"><h3>近期待跟进客户</h3></div><div class="clue-item"><i class="fas fa-calendar-week"></i> 华锐精密 | 上次拜访: 20天前 → 建议回访</div><div class="clue-item"><i class="fas fa-gift"></i> 恒通集团 | 租期即将结束，续租洽谈</div><div class="clue-item"><i class="fas fa-comment-dots"></i> 王智博 | 设备使用反馈收集</div></div><div class="data-card"><div class="card-header"><h3>客情维护记录</h3></div><div><i class="fas fa-check-circle" style="color:#10b981;"></i> 9月20日 为海创企业提供技术培训</div><div><i class="fas fa-check-circle" style="color:#10b981;"></i> 9月18日 赠送中秋定制礼盒</div><div><i class="fas fa-clock"></i> 计划明日拜访“联强建设”</div></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
-            leads: () => `<div class="data-card"><div class="card-header"><h3>销售线索池</h3><span class="badge-action">新增线索</span></div><div class="table-wrapper"><table><thead><tr><th>公司名称</th><th>来源</th><th>意向设备</th><th>跟进人</th><th>状态</th></tr></thead><tbody><tr><td>卓远新能源</td><td>官网咨询</td><td>数据存储阵列</td><td>李潇</td><td>初步沟通</td></tr><tr><td>鼎峰制造</td><td>转介绍</td><td>会议平板+笔记本</td><td>王哲</td><td>方案报价</td></tr><tr><td>极客未来</td><td>展会</td><td>VR/AR租赁套件</td><td>张敏</td><td>意向强烈</td></tr></tbody></table></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
-            ungrouped: () => `<div class="data-card"><div class="card-header"><h3>未分组联系人/客户</h3></div><p style="padding: 12px 0;">共有 24 位客户尚未分配至任何分组，可批量管理分组。</p><div class="badge-action" style="display:inline-block;">一键分配</div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
-            customgroup: () => `<div class="data-card"><div class="card-header"><h3>自定义分组</h3></div><p>VIP客户组、高潜组、高校客户组、华东区域组... <br><span style="color:#3b82f6;">+ 新建自定义分组</span></p></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
-            membermgmt: () => `<div class="data-card"><div class="card-header"><h3>组员管理</h3></div><div class="table-wrapper"><table><thead><tr><th>姓名</th><th>所属分组</th><th>角色</th><th>操作</th></tr></thead><tbody><tr><td>王启航</td><td>销售一组</td><td>组长</td><td><i class="fas fa-edit btn-icon"></i></td></tr><tr><td>李雅欣</td><td>销售二组</td><td>组员</td><td><i class="fas fa-edit btn-icon"></i></td></tr></tbody></table></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved  ：企业魔方CRM@力迅效能</div>`,
-            categorymgmt: () => `<div class="data-card"><div class="card-header"><h3>分类管理</h3></div><div>笔记本 / 台式机 / 服务器 / 影音设备 / 会议大屏 / 摄影器材 / 网络设备</div><div style="margin-top:20px;"><i class="fas fa-plus-circle"></i> 新增分类</div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
-            favorites: () => `<div class="data-card"><div class="card-header"><h3>我的收藏</h3></div><div>⭐ 租赁品: MacBook Pro 定制版</div><div>⭐ 客户: 陈星宇</div><div>⭐ 常用报表: 租赁分析月报</div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved </div>`,
-            cloud: () => `<div class="data-card"><div class="card-header"><h3>云图库</h3></div><div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center;"><div style="width:70px;height:70px;background:#eef2ff;border-radius:16px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-image fa-2x"></i></div><div>产品图片/合同扫描件等云端存储</div></div></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
-            recycle: () => `<div class="data-card"><div class="card-header"><h3>回收站</h3></div><p>已删除租赁品 3件，订单记录 2条，客户 1位，可恢复或彻底删除。</p></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`,
-            microsite: () => `<div class="data-card"><div class="card-header"><h3>微官网配置</h3></div><p>企业对外展示微官网，支持装修、案例展示、在线咨询。<br><span class="badge-action">预览微官网</span> <span class="badge-action">编辑页面</span></p></div><div class="copyright">Copyright 联德租赁 All Rights Reserved</div>`
+            bills: () => `<div class="data-card"><div class="card-header"><h3>租赁账单概览</h3><span class="badge-action">本月应收 ¥94,200</span></div><div class="table-wrapper"><table><thead><tr><th>客户</th><th>账单周期</th><th>应收金额</th><th>已付</th><th>状态</th></tr></thead><tbody><tr><td>杭州智云科技</td><td>2024-09</td><td>¥12,300</td><td>¥12,300</td><td><span class="status-badge">已结清</span></td></tr><tr><td>苏州工业智能</td><td>2024-09</td><td>¥8,450</td><td>¥0</td><td><span class="status-warning">已结清</span></td></tr><tr><td>北京联合设计</td><td>2024-09</td><td>¥3,200</td><td>¥3,200</td><td><span class="status-badge">已结清</span></td></tr></tbody></table></div></div><div class="copyright">Copyright 新德租赁 All Rights Reserved</div>`,
+            customers: () => `<div class="data-card"><div class="card-header"><h3>客户管理</h3><span class="badge-action"><i class="fas fa-user-plus"></i> 新增客户</span></div><div class="table-wrapper"><table><thead><tr><th>客户名称</th><th>联系人</th><th>电话</th><th>租赁次数</th><th>信用评级</th></tr></thead><tbody><tr><td>陈星宇</td><td>张经理</td><td>138****1102</td><td>12</td><td>AA+</td></tr><tr><td>刘向东</td><td>李思源</td><td>159****4501</td><td>7</td><td>A</td></tr><tr><td>周文昊</td><td>王芳</td><td>188****3320</td><td></td><td>B+</td></tr></tbody></table></div></div><div class="copyright">Copyright 新德租赁 All Rights Reserved</div>`,
+            maintain: () => `<div class="two-columns"><div class="data-card"><div class="card-header"><h3>近期待跟进客户</h3></div><div class="clue-item"><i class="fas fa-calendar-week"></i> 华锐精密 | 上次拜访: 20天前 → 建议回访</div><div class="clue-item"><i class="fas fa-gift"></i> 恒通集团 | 租期即将结束，续租洽谈</div><div class="clue-item"><i class="fas fa-comment-dots"></i> 王智博 | 设备使用反馈收集</div></div><div class="data-card"><div class="card-header"><h3>客情维护记录</h3></div><div><i class="fas fa-check-circle" style="color:#10b981;"></i> 9月20日 为海创企业提供技术培训</div><div><i class="fas fa-check-circle" style="color:#10b981;"></i> 9月18日 赠送中秋定制礼盒</div><div><i class="fas fa-clock"></i> 计划明日拜访“联强建设”</div></div></div><div class="copyright">Copyright 新德租赁 All Rights Reserved</div>`,
+            leads: () => `<div class="data-card"><div class="card-header"><h3>销售线索池</h3><span class="badge-action">新增线索</span></div><div class="table-wrapper"><table><thead><tr><th>公司名称</th><th>来源</th><th>意向设备</th><th>跟进人</th><th>状态</th></tr></thead><tbody><tr><td>卓远新能源</td><td>官网咨询</td><td>数据存储阵列</td><td>李潇</td><td>初步沟通</td></tr><tr><td>鼎峰制造</td><td>转介绍</td><td>会议平板+笔记本</td><td>王哲</td><td>方案报价</td></tr><tr><td>极客未来</td><td>展会</td><td>VR/AR租赁套件</td><td>张敏</td><td>意向强烈</td></tr></tbody></table></div></div><div class="copyright">Copyright 新德租赁 All Rights Reserved</div>`,
+            ungrouped: () => `<div class="data-card"><div class="card-header"><h3>未分组联系人/客户</h3></div><p style="padding: 12px 0;">共有 24 位客户尚未分配至任何分组，可批量管理分组。</p><div class="badge-action" style="display:inline-block;">一键分配</div></div><div class="copyright">Copyright 新德租赁 All Rights Reserved</div>`,
+            customgroup: () => `<div class="data-card"><div class="card-header"><h3>自定义分组</h3></div><p>VIP客户组、高潜组、高校客户组、华东区域组... <br><span style="color:#3b82f6;">+ 新建自定义分组</span></p></div><div class="copyright">Copyright 新德租赁 All Rights Reserved</div>`,
+            membermgmt: () => `<div class="data-card"><div class="card-header"><h3>组员管理</h3></div><div class="table-wrapper"><table><thead><tr><th>姓名</th><th>所属分组</th><th>角色</th><th>操作</th></tr></thead><tbody><tr><td>王启航</td><td>销售一组</td><td>组长</td><td><i class="fas fa-edit btn-icon"></i></td></tr><tr><td>李雅欣</td><td>销售二组</td><td>组员</td><td><i class="fas fa-edit btn-icon"></i></td></tr></tbody></table></div></div><div class="copyright">Copyright 新德租赁 All Rights Reserved  ：企业魔方CRM@力迅效能</div>`,
+            categorymgmt: () => `<div class="data-card"><div class="card-header"><h3>分类管理</h3></div><div>笔记本 / 台式机 / 服务器 / 影音设备 / 会议大屏 / 摄影器材 / 网络设备</div><div style="margin-top:20px;"><i class="fas fa-plus-circle"></i> 新增分类</div></div><div class="copyright">Copyright 新德租赁 All Rights Reserved</div>`,
+            favorites: () => `<div class="data-card"><div class="card-header"><h3>我的收藏</h3></div><div>⭐ 租赁品: MacBook Pro 定制版</div><div>⭐ 客户: 陈星宇</div><div>⭐ 常用报表: 租赁分析月报</div></div><div class="copyright">Copyright 新德租赁 All Rights Reserved </div>`,
+            cloud: () => `<div class="data-card"><div class="card-header"><h3>云图库</h3></div><div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center;"><div style="width:70px;height:70px;background:#eef2ff;border-radius:16px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-image fa-2x"></i></div><div>产品图片/合同扫描件等云端存储</div></div></div><div class="copyright">Copyright 新德租赁 All Rights Reserved</div>`,
+            recycle: () => `<div class="data-card"><div class="card-header"><h3>回收站</h3></div><p>已删除租赁品 3件，订单记录 2条，客户 1位，可恢复或彻底删除。</p></div><div class="copyright">Copyright 新德租赁 All Rights Reserved</div>`,
+            microsite: () => `<div class="data-card"><div class="card-header"><h3>微官网配置</h3></div><p>企业对外展示微官网，支持装修、案例展示、在线咨询。<br><span class="badge-action">预览微官网</span> <span class="badge-action">编辑页面</span></p></div><div class="copyright">Copyright 新德租赁 All Rights Reserved</div>`
         };
 
         const titleMap = {
@@ -1916,10 +1916,10 @@
                     bindOrderSearchEvents();
                 }
             } else {
-                contentDiv.innerHTML = `<div class="data-card">暂未开放，敬请期待</div><div class="copyright">Copyright 联德租赁 All Rights Reserved  ：企业魔方CRM@力迅效能</div>`;
+                contentDiv.innerHTML = `<div class="data-card">暂未开放，敬请期待</div><div class="copyright">Copyright 新德租赁 All Rights Reserved  ：企业魔方CRM@力迅效能</div>`;
             }
             const titleElem = document.getElementById('mainTitle');
-            if (titleElem) titleElem.innerText = titleMap[viewId] || '联德租赁';
+            if (titleElem) titleElem.innerText = titleMap[viewId] || '新德租赁';
 
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.classList.remove('active');
